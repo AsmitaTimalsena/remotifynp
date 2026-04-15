@@ -345,10 +345,15 @@
 
                     <div class="contact-info mt-3">
 
-                        <p class="d-flex align-items-center mb-3">
-                            <img src="images/gmail.png" class="gmail-icon me-2">
-                            ashishtimalsena13@gmail.com
-                        </p>
+                        <a href="mailto:ashishtimalsena13@gmail.com?subject=Inquiry from Remotify Website" 
+   class="d-flex align-items-center mb-3 text-decoration-none"
+   style="color:#0d2c6c;">
+
+    <img src="images/gmail.png" class="gmail-icon me-2">
+
+    <span>ashishtimalsena13@gmail.com</span>
+
+</a>
 
                         <p class="d-flex align-items-center">
                             <a href="https://www.linkedin.com/in/ashysz/" target="_blank">
@@ -363,21 +368,23 @@
 
                 <!-- FORM -->
                 <div class="col-md-6">
-                    <form>
+                    <form action="https://formspree.io/f/maqaqylb" method="POST">
+                        <input type="hidden" name="_next" value="#">
+                        <input type="text" name="_gotcha" style="display:none">
 
                         <div class="mb-3">
-                            <label class="form-label fw-semibold" style="color: inherit;">Name</label>
-                            <input type="text" class="form-control" placeholder="Enter your name">
+                            <label class="form-label fw-semibold" style="color: inherit;" >Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your name" name="name">
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label  fw-semibold" style="color: inherit;">Email</label>
-                            <input type="email" class="form-control" placeholder="Enter your email">
+                            <input type="email" class="form-control" placeholder="Enter your email" name="email">
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label  fw-semibold" style="color: inherit;">Service Needed</label>
-                            <select class="form-select">
+                            <select name="service" class="form-select">
                                 <option>Select a service</option>
                                 <option>Free Sample Task</option>
                                 <option>Admin & Data Entry</option>
@@ -386,7 +393,13 @@
                                 <option>Communication Support</option>
                             </select>
                         </div>
-                        <button class="btn w-100 fw-bold btn-submit">
+
+                        <div class="mb-3">
+    <label class="form-label fw-semibold" style="color: inherit;">Message</label>
+    <textarea name="message" class="form-control" rows="4" placeholder="How can we help you?"></textarea>
+</div>
+
+                        <button type="submit" class="btn w-100 fw-bold btn-submit">
                             Send Inquiry
                         </button>
 
@@ -404,6 +417,18 @@
 
     <script>
         AOS.init();
+        const form = document.querySelector('form');
+        form.addEventListener('submit', function() {
+            setTimeout(() =>{
+                form.reset();
+            }, 300);
+        });
+
+        window.addEventListener("pageshow", function(event){
+            if (event.persisted) {
+                form.reset();
+            }
+        });
     </script>
 
 </body>
