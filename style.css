@@ -337,3 +337,12 @@ select {
     color: white;
     transform: translateY(-2px);
 }
+
+/* Error state */
+.input-error {
+    border: 2px solid #e63946 !important;
+}
+
+.input-error:focus {
+    box-shadow: 0 0 0 0.2rem rgba(230,57,70,0.2);
+}
