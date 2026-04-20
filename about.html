@@ -17,11 +17,35 @@
     --orange: #e63946;
 }
 
+
 /* NAVBAR */
 .logo {
-    height: 50px;   /* adjust as needed */
+    height: 50px;
     width: auto;
     object-fit: contain;
+    transform: scale(1.3);   /* 👈 makes it visually bigger */
+    transform-origin: left center;
+}
+/* BRAND TEXT */
+.brand-text {
+    font-size: 1.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;;
+}
+
+/* REMOTIFY gradient (dark → light blue) */
+.remotify-text {
+    background: linear-gradient(90deg, #0d2c6c, #3a4fd8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* NEPAL orange */
+.nepal-text {
+    color: #e63946;
+    margin-left: 5px;
 }
 .navbar {
     position: sticky;
@@ -108,8 +132,13 @@
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg shadow-sm">
 <div class="container">
-<a class="navbar-brand" href="#">
-    <img src="images/remotify.png" class="logo">
+<a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="images/remotifynp.png" class="logo me-2">
+
+    <span class="brand-text">
+        <span class="remotify-text">Remotify</span>
+        <span class="nepal-text"> Nepal</span>
+    </span>
 </a>
 
 <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
