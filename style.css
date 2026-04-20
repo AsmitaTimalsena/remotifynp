@@ -46,6 +46,15 @@ body {
     display: flex;
     align-items: center;
 }
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 10px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+}
 
 .nav-custom {
     color: #0d2c6c !important;
